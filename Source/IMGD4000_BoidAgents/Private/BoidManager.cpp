@@ -15,7 +15,7 @@ ABoidManager::ABoidManager()
 	locationScale = 500;
 	velocityScale = 50;
 	bufferDistance = 125.0f;
-	speedLimit = 15;
+	speedLimit = 10;
 }
 
 // Called when the game starts or when spawned
@@ -106,7 +106,7 @@ FVector ABoidManager::ruleOne(ABoidActor* currentBoid) {
 FVector ABoidManager::ruleTwo(ABoidActor* currentBoid) {
 	FVector distanceVector = FVector();
 
-	// if boids are close to each other (euclidian distance <= bufferDistance, adjust position)
+	// if boids are close to each other (euclidean distance <= bufferDistance, adjust position)
 	for (ABoidActor* boid : boidList) {
 		if (boid != currentBoid) {
 			// if boid is close to another object, adjust vector 
